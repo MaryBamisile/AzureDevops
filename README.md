@@ -1,4 +1,4 @@
-# AzureDevops Project
+<img width="696" height="808" alt="image" src="https://github.com/user-attachments/assets/41ef777e-5b92-4787-a521-eaa7356bf7b2" /># AzureDevops Project
 
 ##### Step 1: I created my app service:
 
@@ -7,9 +7,53 @@
 Running website:
 <img width="1098" height="898" alt="image" src="https://github.com/user-attachments/assets/34a25884-d068-487a-aa73-72a106aa0aad" />
 
-#### Azure P2S VPN deployment
+#### Step 2: Azure P2S VPN deployment
 I created a new Vnet and also GatewaySubnet as seen below:
+##### Note: Ensure you use the subnet purpose specified for 'virtual network gateway'
 
 <img width="1880" height="679" alt="image" src="https://github.com/user-attachments/assets/5b6f1be6-06eb-4953-a1d6-e39439d8c27d" />
+
+##### Next, go to virtual network gateway and click on create 
+
+##### Creation takes time, between 20 - 30mins....one of the longest azure service that takes long time to create
+
+<img width="838" height="806" alt="image" src="https://github.com/user-attachments/assets/371024a9-75ea-4d96-8b5d-df253916547a" />
+
+Afer creating, go to the created resource and configure
+
+<img width="498" height="393" alt="image" src="https://github.com/user-attachments/assets/1380abff-0fc3-450f-9f7e-f05578f2613d" />
+
+Check the docs, to get the details of the configuration required (Audience, Issuer)
+
+https://learn.microsoft.com/en-us/azure/vpn-gateway/openvpn-azure-ad-tenant
+
+<img width="474" height="379" alt="image" src="https://github.com/user-attachments/assets/74d0497d-bf7b-461d-bee3-6e4ba2287ba6" />
+
+We need to register the Azure VPN application and grant admin consent. The user account should have cloud app admin role
+
+Paste the URL and browse: https://login.microsoftonline.com/common/oauth2/authorize?client_id=41b23e61-6c1e-4545-b367-cd054e0ed4b4&response_type=code&redirect_uri=https://portal.azure.com&nonce=1234&prompt=admin_consent
+
+<img width="696" height="808" alt="image" src="https://github.com/user-attachments/assets/c538c82d-3d96-4232-9716-6045546ba731" />
+
+Click accept, and the app will be registerd in Entra ID
+
+<img width="1904" height="606" alt="image" src="https://github.com/user-attachments/assets/693b37a7-d1cb-47b9-884b-62b7e492e4e8" />
+
+Now, download Azure VPN client and also the VPN configuration file
+
+<img width="830" height="574" alt="image" src="https://github.com/user-attachments/assets/6db101e0-4f2f-432b-82ec-5877c24ca403" />
+
+
+On the Azure VPM client application, click + and import and save
+<img width="703" height="807" alt="image" src="https://github.com/user-attachments/assets/1d32c2b1-2897-4105-bb35-5e0bd19066e4" />
+
+It will prompt for authentication for the first time, and it should connect shortly
+
+Now, it is connected,
+<img width="490" height="678" alt="image" src="https://github.com/user-attachments/assets/3710b95a-46bf-4981-893e-9df6e98c91d1" />
+
+
+
+
 
 
