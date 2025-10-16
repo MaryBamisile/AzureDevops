@@ -1,4 +1,4 @@
-<img width="696" height="808" alt="image" src="https://github.com/user-attachments/assets/41ef777e-5b92-4787-a521-eaa7356bf7b2" /># AzureDevops Project
+# AzureDevops Project
 
 ##### Step 1: I created my app service:
 
@@ -52,8 +52,20 @@ It will prompt for authentication for the first time, and it should connect shor
 Now, it is connected,
 <img width="490" height="678" alt="image" src="https://github.com/user-attachments/assets/3710b95a-46bf-4981-893e-9df6e98c91d1" />
 
+Integrate App Service with a VNet
 
+This ensures your App Service can be reached through private IP routing.
 
+#### Step 3: In App Service → Networking → VNet Integration
+
+- Select the same VNet as your VPN Gateway.
+- Choose a dedicated subnet (not the GatewaySubnet). Hence, I quickly added 2 new subnets for the purpose of VNet and PE integration
+  
+<img width="1173" height="460" alt="image" src="https://github.com/user-attachments/assets/fa582e3e-4b8b-4f10-bb7e-baa38e56718a" />
+
+#### Purpose: The App Service can now communicate privately within the VNet.
+
+<img width="1419" height="797" alt="image" src="https://github.com/user-attachments/assets/263c27b9-6e44-4875-a10f-2dbf5f330e65" />
 
 
 
