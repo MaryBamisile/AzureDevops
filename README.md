@@ -67,5 +67,44 @@ This ensures your App Service can be reached through private IP routing.
 
 <img width="1419" height="797" alt="image" src="https://github.com/user-attachments/assets/263c27b9-6e44-4875-a10f-2dbf5f330e65" />
 
+#### Step 4: Create a Private Endpoint for the App Service
+
+- This gives the App Service a private IP address inside your VNet.
+- Go to App Service → Networking → Private Endpoint connections → Add
+- Select the same VNet and a dedicated subnet.
+- Approve the connection if it shows as “Pending.”
+
+##### Purpose: The App Service is now reachable via a private IP (no longer through the public endpoint).
+
+<img width="1293" height="433" alt="image" src="https://github.com/user-attachments/assets/8e87dc09-92c2-41f9-9a21-04ae68a4d481" />
+
+The DNS record:
+
+<img width="1404" height="774" alt="image" src="https://github.com/user-attachments/assets/2449491f-d0b0-4190-a531-65e9ef28a9f1" />
+
+
+#### Step 5: Disable Public Network Access
+
+- In App Service → Networking → Access Restrictions
+- Add a deny rule for all public inbound traffic.
+- Ensure only the private endpoint is allowed.
+
+✅ Purpose: Only traffic from inside your VNet can reach the App Service.
+
+<img width="1456" height="669" alt="image" src="https://github.com/user-attachments/assets/0ff84cba-6fe2-4a38-ae67-19e0b8f83d5f" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
