@@ -98,6 +98,9 @@ The DNS record:
 
 
 
+CHALLENGES FACED:
+
+<img width="1899" height="769" alt="image" src="https://github.com/user-attachments/assets/48e45e47-5440-4b6a-a4c1-49204d8b10cc" />
 
 
 
