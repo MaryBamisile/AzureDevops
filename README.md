@@ -1,4 +1,4 @@
-# AzureDevops Projec
+# Azure WebApp Security lab
 This projest is all about building a web application using Azure App Service, integrated it with a VNet integration and azure P2S VPN to block internet access and restrict access to only users connecting from the Azure P2S VPN.
 
 ##### Step 1: I created my app service:
